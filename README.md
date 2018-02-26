@@ -1,13 +1,15 @@
 Introdution
+===========
 
-> Luckybuy draw script that was wrote by nodeJS language and using transaction hash of ethereum block as input data to draw.
+- Luckybuy draw script that was wrote by nodeJS language and using transaction hash of ethereum block as input data to draw.
 
-> We have built a completely transparent and fully decentralized platform for organizing and conducting a lottery using the blockchain technology.
+- We have built a completely transparent and fully decentralized platform for organizing and conducting a lottery using the blockchain technology.
 Data which using for lottery is transaction hash(es): 0x32f4f13e90df98dbaa954b509a1ab8206463565be3b9e29943459140592803c0)
 This transaction hash was created when user send LKB token from user’s wallet to Luckybuy token wallet (user buy ticket to join lottery of some product).
 This token was created and saved on blockchain ethereum unique and forever. No one can change and everyone can check
 
 The processing of lottery:
+=========================
 1)	User buy n tickets(1 transaction hex will be created)
 2)	If n > 1 then generate n-1 tickets from above(3.1.1) transaction hex by simple algorithm
 3)	This hash is then broken into sequences of 4 (four) characters, starting from the tail, and transformed into a number using NHEX base 16:
@@ -21,3 +23,8 @@ L=sum(X1->Xn)/n
 6)	Find out the person who has win the lottery price
 Travel all ticket. If any ticket which abs (Xn-L) has smallest value then that ticket will be winning.
 If there are more than one ticket has the same smallest value then the ticket was bought prior will be win.
+
+How to run this script?
+=======================
+1) You must download and install latest nodeJS(version 8.5 or later). Refer this link https://nodejs.org/en/download/package-manager/ for install nodeJS
+2) Just run by command: # node /path-to-file/luckybuy-draw.js
